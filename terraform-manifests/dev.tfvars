@@ -2,5 +2,5 @@
 environment = "Master"
 
 # DNS Name
-dns_name = "flink_aws.com"
+dns_name = "flinkaws.com"
 
