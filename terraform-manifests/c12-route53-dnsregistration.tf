@@ -6,14 +6,12 @@ resource "aws_route53_zone" "flink_aws" {
   }
 }
 
-resource "aws_route53_record" "www" {
- zone_id = aws_route53_zone.flink_aws.zone_id
- name    = "www.flinkaws.com"
- type    = "A"
-  ttl     = "300"
-  records = [aws_eip.eip.public_ip]
-}
+resource "aws_route53_record" "nameservers" {
+  allow_overwrite = true
+  name            = "flinkaws.comm"
+  ttl             = 3600
+  type            = "NS"
+  zone_id         = aws_route53_zone.flink_aws.zone_id
 
-output "name_server"{
-  value=aws_route53_zone.flink_aws.name_servers
+  records = aws_route53_zone.flink_aws.name_servers
 }
