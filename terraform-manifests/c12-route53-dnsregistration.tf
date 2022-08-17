@@ -8,7 +8,7 @@ resource "aws_route53_zone" "flink_aws" {
 
 resource "aws_route53_record" "nameservers" {
   allow_overwrite = true
-  name            = "flinkaws.comm"
+  name            = "flinkaws.com"
   ttl             = 3600
   type            = "NS"
   zone_id         = aws_route53_zone.flink_aws.zone_id
