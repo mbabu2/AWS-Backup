@@ -21,7 +21,7 @@ terraform {
 
 # Provider Block
 provider "aws" {
-  region  = "var.aws_region"
+  region  = {}
   profile = "default"
 }
 /*
